@@ -52,11 +52,14 @@
 			<?php
 				$i = 0;
 				$totalSize = 0;
-
+				$url_head=$file->get_downloads_folder();  //get full localtion of files
+				$url_head="/downloads";  //Set new localtion of files
 				foreach($files as $f)
 				{
+					echo $file->get_downloads_folder()."<br />";
 					echo "<tr>";
-					echo "<td><a href=\"".$file->get_downloads_folder().'/'.$f["name"]."\" download>".$f["name"]."</a></td>";
+						
+					echo "<td><a href=\"".$url_head.'/'.$f["name"]."\" download>".$f["name"]."</a></td>";
 					echo "<td>".$f["size"]."</td>";
 					echo "<td><a href=\"./list.php?delete=$i&type=$t\" class=\"btn btn-danger btn-sm\">Delete</a></td>";
 					echo "</tr>";
